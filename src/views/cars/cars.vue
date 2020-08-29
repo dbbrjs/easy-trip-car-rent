@@ -472,20 +472,27 @@ export default {
     showAddCarDia() {
       this.form = {};
       this.dialogFormVisibleAdd = true;
+      
     },
     // 添加车辆 - 发送请求
     async submitData() {
       // 关闭对话框
       this.dialogFormVisibleAdd = false;
+      
+      // 清空上次 上传的信息
+      this.formData=new FormData()
       // 添加当前剩余图片文件
       this.$refs.uploada.uploadFiles.forEach(ev => {
         this.formData.append("files", ev.raw);
       });
       // 把form表单的数据加入到FormData中
+      
       Object.keys(this.form).forEach(ele => {
         this.formData.append(ele, this.form[ele]);
       });
       console.log(this.formData);
+      // 清空图片预览缓存
+      this.fileList=[]
 
       const res = await this.$axios.post("car/createcar", this.formData, {
         methods: "post",

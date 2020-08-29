@@ -101,7 +101,7 @@
             {{ scope.row.cstatus | fmtcarstate }}
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="220px">
+        <el-table-column label="操作" width="220px" v-if="role==0">
           <template slot-scope="scope" v-if="scope.row.cstatus == 3">
             <el-button
               type="primary"
@@ -164,7 +164,8 @@ export default {
       // 房间列表
       carList: [],
       // 房间总数
-      total: 0
+      total: 0,
+      role: localStorage.getItem("role")
     };
   },
   watch: {

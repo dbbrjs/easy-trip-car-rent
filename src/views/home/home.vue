@@ -144,11 +144,12 @@ export default {
   },
   created() {
     console.log(this.menus);
-    let jrole = localStorage.getItem("role");
+    var _this=this
+    // let jrole = localStorage.getItem("role");
     let arr = [];
     var rolecheck = function(ev) {                   // 权限管理，根据权限显示                     
       for (let i = 0; i < ev.length; i++) {
-        if (ev[i].juisdiction.includes(jrole)) {
+        if (ev[i].juisdiction.includes(_this.role)) {
           if (ev[i].children) {
             rolecheck(ev[i].children);
           }
