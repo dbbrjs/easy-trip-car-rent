@@ -46,7 +46,7 @@
                 <span>{{ props.row.cprice }}元/天</span>
               </el-form-item>
               <el-form-item label="车主姓名：">
-                <span>{{ props.row.account }}</span>
+                <span>{{ props.row.ownername }}</span>
               </el-form-item>
               <el-form-item label="车主身份证号：">
                 <span>{{ props.row.ownerid }}</span>
@@ -64,7 +64,7 @@
                 <span>{{ props.row.ctype }}</span>
               </el-form-item>
               <el-form-item label="行驶里程：">
-                <span>{{ props.row.cused }}km²</span>
+                <span>{{ props.row.cused }}km</span>
               </el-form-item>
               <el-form-item label="购买日期：">
                 <span>{{ props.row.getdate | fmtdata }}</span>
@@ -73,7 +73,7 @@
                 <span>{{ props.row.dateline | fmtdata }}</span>
               </el-form-item>
 
-              <el-form-item label="车辆展示：">
+              <el-form-item label="车辆展示：" class="carshow">
                 <img :src="props.row.pic1" alt width="50px" />
                 <img :src="props.row.pic2" alt width="50px" />
                 <img :src="props.row.pic3" alt width="50px" />
@@ -175,7 +175,7 @@
         </el-form-item>
         <el-form-item label="车主" label-width="100px">
           <el-input
-            v-model="form.account"
+            v-model="form.ownername"
             autocomplete="off"
             placeholder="请填写车主"
           ></el-input>
@@ -199,13 +199,6 @@
             v-model="form.ownerid"
             autocomplete="off"
             placeholder="请填写车主身份证"
-          ></el-input>
-        </el-form-item>
-        <el-form-item label="类别" label-width="100px">
-          <el-input
-            v-model="form.ctype"
-            autocomplete="off"
-            placeholder="请填写类别"
           ></el-input>
         </el-form-item>
         <el-form-item label="购车日期" label-width="100px">
@@ -295,7 +288,7 @@
         </el-form-item>
         <el-form-item label="车主" label-width="100px">
           <el-input
-            v-model="form.account"
+            v-model="form.ownername"
             autocomplete="off"
             placeholder="请填写车主"
           ></el-input>
@@ -578,6 +571,9 @@ export default {
 </script>
 
 <style scoped>
+.carshow img {
+  margin-right: 10px;
+}
 .demo-table-expand {
   font-size: 0;
 }

@@ -45,7 +45,7 @@
                 <span>{{ props.row.cprice }}元/天</span>
               </el-form-item>
               <el-form-item label="车主姓名：">
-                <span>{{ props.row.account }}</span>
+                <span>{{ props.row.ownername }}</span>
               </el-form-item>
               <el-form-item label="车主身份证号：">
                 <span>{{ props.row.ownerid }}</span>
@@ -63,7 +63,7 @@
                 <span>{{ props.row.ctype }}</span>
               </el-form-item>
               <el-form-item label="行驶里程：">
-                <span>{{ props.row.cused }}km²</span>
+                <span>{{ props.row.cused }}km</span>
               </el-form-item>
               <el-form-item label="购买日期：">
                 <span>{{ props.row.getdate | fmtdata }}</span>
