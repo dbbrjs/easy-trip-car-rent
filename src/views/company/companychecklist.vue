@@ -63,12 +63,10 @@
                 <span>{{ props.row.slocation }}</span>
               </el-form-item>
               <el-form-item label="营业执照：">
-                <template slot-scope="scope">
-                  <el-image
-                    style="width: 200px;height:100px"
-                    :src="scope.row.mainpic"
-                  ></el-image>
-                </template>
+                <el-image
+                  style="width: 200px;height:100px"
+                  :src="props.row.business"
+                ></el-image>
               </el-form-item>
               <el-form-item label="描述：">
                 <span>{{ props.row.description }}</span>

@@ -101,7 +101,7 @@
             {{ scope.row.cstatus | fmtcarstate }}
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="220px" v-if="role==0">
+        <el-table-column label="操作" width="220px" v-if="role == 0">
           <template slot-scope="scope" v-if="scope.row.cstatus == 3">
             <el-button
               type="primary"

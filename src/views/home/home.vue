@@ -5,7 +5,13 @@
       <el-row>
         <el-col :span="4">
           <div class="grid-content bg-purple">
-            <img src="../../assets/53.gif" alt="无法显示图片" height="120" width="150" style="margin-top: -30px;" />
+            <img
+              src="../../assets/53.gif"
+              alt="无法显示图片"
+              height="120"
+              width="150"
+              style="margin-top: -30px;"
+            />
           </div>
         </el-col>
         <el-col :span="17" class="middle">
@@ -26,12 +32,20 @@
         <el-menu :unique-opened="true" :router="true">
           <!-- 1 -->
 
-          <el-submenu :index="'' + item.order" v-for="(item, index) in this.menus" :key="index">
+          <el-submenu
+            :index="'' + item.order"
+            v-for="(item, index) in this.menus"
+            :key="index"
+          >
             <template slot="title">
               <i class="el-icon-location"></i>
               <span>{{ item.authName }}</span>
             </template>
-            <el-menu-item :index="item1.path" v-for="(item1, index) in item.children" :key="index">
+            <el-menu-item
+              :index="item1.path"
+              v-for="(item1, index) in item.children"
+              :key="index"
+            >
               <i class="el-icon-success"></i>
               <span>{{ item1.authName }}</span>
             </el-menu-item>
@@ -144,10 +158,11 @@ export default {
   },
   created() {
     console.log(this.menus);
-    var _this=this
+    var _this = this;
     // let jrole = localStorage.getItem("role");
     let arr = [];
-    var rolecheck = function(ev) {                   // 权限管理，根据权限显示                     
+    var rolecheck = function(ev) {
+      // 权限管理，根据权限显示
       for (let i = 0; i < ev.length; i++) {
         if (ev[i].juisdiction.includes(_this.role)) {
           if (ev[i].children) {
@@ -155,8 +170,8 @@ export default {
           }
         } else {
           arr.push(ev[i].order);
-          ev.splice(i,1)         // 可以直接删除原数组对象！！！！！
-          i--
+          ev.splice(i, 1); // 可以直接删除原数组对象！！！！！
+          i--;
         }
       }
     };

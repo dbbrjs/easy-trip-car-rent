@@ -151,7 +151,7 @@ export default {
     },
     // 拒绝
     async refuse(ev) {
-      const { data: res } = await this.$axios.put(`order/rufuse/${ev}`);
+      const { data: res } = await this.$axios.put(`order/refuse/${ev}`);
       if (res.meta.status == 201) {
         this.$message.success("操作成功！");
         this.getorderList();

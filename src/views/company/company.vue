@@ -57,12 +57,10 @@
               <span>{{ props.row.slocation }}</span>
             </el-form-item>
             <el-form-item label="营业执照：">
-              <template slot-scope="scope">
                 <el-image
                   style="width: 200px;height:100px"
-                  :src="scope.row.mainpic"
+                  :src="props.row.business"
                 ></el-image>
-              </template>
             </el-form-item>
             <el-form-item label="描述：">
               <span>{{ props.row.description }}</span>
@@ -138,10 +136,14 @@ export default {
       pagesize: 2
     };
   },
-  filters:{
-    fmtcompanystate:function(v){
-      if(v==true){return "正运营中"}
-      if(v==false){return "已被冻结"}
+  filters: {
+    fmtcompanystate: function(v) {
+      if (v == true) {
+        return "正运营中";
+      }
+      if (v == false) {
+        return "已被冻结";
+      }
     }
   },
   created() {

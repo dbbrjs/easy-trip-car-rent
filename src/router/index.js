@@ -123,13 +123,11 @@ const router = new Router({
   ]
 });
 
-
 //vue-router@3.0版本及以上回调形式已经改成promise api的形式了，返回的是一个promise，如果路由地址跳转相同, 且没有捕获到错误，控制台始终会出现如图所示的警告 （注：3.0以下版本则不会出现以下警告！！！，因路由回调问题…）
-const originalPush = Router.prototype.push
+const originalPush = Router.prototype.push;
 Router.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err)
-}
-
+  return originalPush.call(this, location).catch(err => err);
+};
 
 // 在路由配置生效之前 统一判断token
 // 路由守卫 在路由配置生效之前
@@ -139,34 +137,32 @@ Router.prototype.push = function push(location) {
 router.beforeEach((to, from, next) => {
   console.log(to);
 
-  if (to.path === '/login') {
-    next()
+  if (to.path === "/login") {
+    next();
   } else {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token");
     if (!token) {
-      Message.warning('请先登录')   // 这个Message也是单独应用的
-      router.push({   // 这里没有this.$router 所以直接使用router
-        name: 'login'
-      })
-      return
+      Message.warning("请先登录"); // 这个Message也是单独应用的
+      router.push({
+        // 这里没有this.$router 所以直接使用router
+        name: "login"
+      });
+      return;
     } else {
-      const jrole = localStorage.getItem('role')
-      if (to.meta.role.join('').includes(jrole)) {
-        next()
+      const jrole = localStorage.getItem("role");
+      if (to.meta.role.join("").includes(jrole)) {
+        next();
       } else {
-        Message.warning('权限不足')   // 这个Message也是单独应用的
-        router.push({   // 这里没有this.$router 所以直接使用router
-          name: 'login'
-        })
-        return
+        Message.warning("权限不足"); // 这个Message也是单独应用的
+        router.push({
+          // 这里没有this.$router 所以直接使用router
+          name: "login"
+        });
+        return;
       }
     }
-    next()
+    next();
   }
-
-
-
-
 });
 
 export default router;

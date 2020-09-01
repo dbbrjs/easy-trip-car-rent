@@ -24,7 +24,9 @@ Vue.config.productionTip = false;
 
 // 全局过滤器 - 处理日期
 Vue.filter("fmtdata", v => {
-  if (!v) { return '暂定' } else {
+  if (!v) {
+    return "暂定";
+  } else {
     return moment(v).format("YYYY-MM-DD");
   }
 });
