@@ -35,7 +35,7 @@
             <el-form-item label="代表法人：">
               <span>{{ props.row.representative }}</span>
             </el-form-item>
-            <el-form-item label="代表人身份证号">
+            <el-form-item label="代表人身份证号：">
               <span>{{ props.row.representativeid }}</span>
             </el-form-item>
             <el-form-item label="联系电话：">
@@ -48,7 +48,7 @@
               <span>{{ props.row.capital }}元/月</span>
             </el-form-item>
             <el-form-item label="企业状态：">
-              <span>{{ props.row.housestate | fmtstate }}</span>
+              <span>{{ props.row.sstatus | fmtcompanystate }}</span>
             </el-form-item>
             <el-form-item label="到期时间：">
               <span>{{ props.row.dateline | fmtdata }}</span>
@@ -137,6 +137,12 @@ export default {
       pagenum: 1,
       pagesize: 2
     };
+  },
+  filters:{
+    fmtcompanystate:function(v){
+      if(v==true){return "正运营中"}
+      if(v==false){return "已被冻结"}
+    }
   },
   created() {
     this.getStoreList();

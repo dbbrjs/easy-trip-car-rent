@@ -5,7 +5,7 @@
       <el-row>
         <el-col :span="4">
           <div class="grid-content bg-purple">
-            <img src="../../assets/logo.png" alt="无法显示图片" height="60" width="60" />
+            <img src="../../assets/53.gif" alt="无法显示图片" height="120" width="150" style="margin-top: -30px;" />
           </div>
         </el-col>
         <el-col :span="17" class="middle">

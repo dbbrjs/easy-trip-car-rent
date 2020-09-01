@@ -50,8 +50,8 @@
               <el-form-item label="车主身份证号：">
                 <span>{{ props.row.ownerid }}</span>
               </el-form-item>
-              <el-form-item label="挂靠企业：">
-                <span>{{ props.row.sname }}</span>
+              <el-form-item label="挂靠企业编号：">
+                <span>{{ props.row.sid }}</span>
               </el-form-item>
               <el-form-item label="车身颜色：">
                 <span>{{ props.row.color }}</span>

@@ -38,7 +38,7 @@
                 <span>{{ props.row.license }}</span>
               </el-form-item>
               <el-form-item label="车辆名称">
-                <span>{{ props.row.cname }}</span>
+                <span>{{ props.row.came }}</span>
               </el-form-item>
               <el-form-item label="租赁人">
                 <span>{{ props.row.username }}</span>
@@ -47,10 +47,10 @@
                 <span>{{ props.row.cellphone }}</span>
               </el-form-item>
               <el-form-item label="押金">
-                <span>{{ props.row.deposit }}</span>
+                <span>{{ props.row.deposit }}元</span>
               </el-form-item>
               <el-form-item label="订单价格">
-                <span>{{ props.row.price }}</span>
+                <span>{{ props.row.price }}元</span>
               </el-form-item>
               <el-form-item label="租车时间">
                 <span>{{ props.row.renttime | fmtdata }}</span>
@@ -65,7 +65,7 @@
           </template>
         </el-table-column>
         <el-table-column label="订单号" prop="orderid"></el-table-column>
-        <el-table-column label="车辆名称" prop="cname"></el-table-column>
+        <el-table-column label="车辆名称" prop="came"></el-table-column>
         <el-table-column label="租赁人" prop="username"></el-table-column>
         <el-table-column label="联系电话" prop="cellphone"></el-table-column>
         <el-table-column label="租车时间" prop="renttime">

@@ -24,7 +24,9 @@ Vue.config.productionTip = false;
 
 // 全局过滤器 - 处理日期
 Vue.filter("fmtdata", v => {
-  return moment(v).format("YYYY-MM-DD");
+  if (!v) { return '暂定' } else {
+    return moment(v).format("YYYY-MM-DD");
+  }
 });
 Vue.filter("fmtstate", v => {
   let stateArr = ["正运营中", "等待审核", "已被冻结", "审核拒绝", "已被删除"];
