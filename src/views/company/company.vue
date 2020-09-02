@@ -45,7 +45,7 @@
               <span>{{ props.row.semail }}</span>
             </el-form-item>
             <el-form-item label="注册资金：">
-              <span>{{ props.row.capital }}元/月</span>
+              <span>{{ props.row.capital }}万元</span>
             </el-form-item>
             <el-form-item label="企业状态：">
               <span>{{ props.row.sstatus | fmtcompanystate }}</span>

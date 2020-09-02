@@ -41,7 +41,7 @@
               <el-form-item label="代表法人：">
                 <span>{{ props.row.representative }}</span>
               </el-form-item>
-              <el-form-item label="代表人身份证号">
+              <el-form-item label="代表人身份证号：">
                 <span>{{ props.row.representativeid }}</span>
               </el-form-item>
               <el-form-item label="联系电话：">
@@ -51,7 +51,7 @@
                 <span>{{ props.row.semail }}</span>
               </el-form-item>
               <el-form-item label="注册资金：">
-                <span>{{ props.row.capital }}元/月</span>
+                <span>{{ props.row.capital }}万元</span>
               </el-form-item>
               <el-form-item label="企业状态：">
                 <span>{{ props.row.sstatus | fmtstate }}</span>
